@@ -24,8 +24,8 @@ items:
         dockerfilePath: Dockerfile
         from:
           kind: ImageStreamTag
-          name: python-36-centos7:latest
-          namespace: centos
+          name: python:latest
+          namespace: openshift
         forcePull: true
       type: Docker
 kind: List

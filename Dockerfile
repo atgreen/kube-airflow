@@ -6,7 +6,7 @@ MAINTAINER Anthony Green <green@redhat.com>
 ARG AIRFLOW_VERSION=1.8.0.0
 ENV AIRFLOW_HOME /opt/app-root/src
 
-RUN /usr/bin/scl enable rh-python35 pip install pytz==2015.7 \
+RUN source scl_source enable rh-python35 && pip install pytz==2015.7 \
     && pip install cryptography \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \

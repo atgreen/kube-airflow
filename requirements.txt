@@ -1,0 +1,8 @@
+pytz==2015.7
+cryptography
+pyOpenSSL
+ndg-httpsclient
+pyasn1
+psycopg2-binary
+airflow[celery,postgresql,hive]==1.8.0.0
+
