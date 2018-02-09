@@ -2,7 +2,7 @@ AIRFLOW_VERSION ?= 1.8.0.0
 KUBECTL_VERSION ?= 1.6.1
 KUBE_AIRFLOW_VERSION ?= 0.10
 
-REPOSITORY ?= mumoshu/kube-airflow
+REPOSITORY ?= atgreen/ocp-airflow
 TAG ?= $(AIRFLOW_VERSION)-$(KUBECTL_VERSION)-$(KUBE_AIRFLOW_VERSION)
 IMAGE ?= $(REPOSITORY):$(TAG)
 ALIAS ?= $(REPOSITORY):$(AIRFLOW_VERSION)-$(KUBECTL_VERSION)
@@ -80,7 +80,7 @@ list-pods:
 	kubectl get po -a --namespace $(NAMESPACE)
 
 browse-web:
-	minikube service web -n $(NAMESPACE)
+	minishift service web -n $(NAMESPACE)
 
 browse-flower:
-	minikube service flower -n $(NAMESPACE)
+	minishift service flower -n $(NAMESPACE)
