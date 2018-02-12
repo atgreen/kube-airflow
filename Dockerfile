@@ -14,6 +14,8 @@ RUN source scl_source enable rh-python35 && pip install pytz==2015.7 \
     && pip install psycopg2-binary \
     && pip install airflow[celery,postgresql,hive]==$AIRFLOW_VERSION
 
+RUN yum -y install nmap-ncat
+
 ENV KUBECTL_VERSION %%KUBECTL_VERSION%%
 
 RUN curl -L -o /opt/app-root/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && chmod +x /opt/app-root/bin/kubectl
